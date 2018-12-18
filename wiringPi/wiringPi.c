@@ -1336,7 +1336,7 @@ int isA20(void)
 /*add for H3 guenter*/
 int isH5(void)
 {
-  FILE *cpuFd ;
+  /*FILE *cpuFd ;
   char line [120] ;
   char *d;
 	if ((cpuFd = fopen ("/proc/cpuinfo", "r")) == NULL)
@@ -1367,7 +1367,8 @@ int isH5(void)
 		if (wiringPiDebug)
 		printf ("Hardware:%s\n",line) ;
 		return 0 ;
-	}
+	}*/
+  return 1;
 }
 /* guenter ende */
 

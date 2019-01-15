@@ -6,7 +6,7 @@
 #define MAX_TIMINGS 85
 #define DHT_PIN 7
 
-#define RELAY_PIN 11
+#define RELAY_PIN 12
 
 int data[5] = { 0, 0, 0, 0, 0 };
  

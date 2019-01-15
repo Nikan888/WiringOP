@@ -24,9 +24,6 @@ void read_dht_data()
     delay( 18 );
 
     //
-    pinMode(RELAY_PIN, OUTPUT);
-    digitalWrite(RELAY_PIN, HIGH);
-    //
  
     /* prepare to read the pin */
     pinMode( DHT_PIN, INPUT );
@@ -100,6 +97,9 @@ void read_dht_data()
  
 int main( void )
 {
+    pinMode(RELAY_PIN, OUTPUT);
+    digitalWrite(RELAY_PIN, HIGH);
+
     printf( "DHT22 temperature/humidity test\n" );
  
     if ( wiringPiSetup() == -1 )

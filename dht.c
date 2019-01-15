@@ -25,7 +25,7 @@ void read_dht_data()
 
     //
     pinMode(RELAY_PIN, OUTPUT);
-    digitalWrite(RELAY_PIN, LOW);
+    digitalWrite(RELAY_PIN, HIGH);
     //
  
     /* prepare to read the pin */
@@ -86,11 +86,11 @@ void read_dht_data()
         printf( "Humidity = %.1f %% Temperature = %.1f *C (%.1f *F)\n", h, c, f );
         if (h > 60)
         {
-            digitalWrite(RELAY_PIN, HIGH);
+            digitalWrite(RELAY_PIN, LOW);
         }
         else
         {
-            digitalWrite(RELAY_PIN, LOW);
+            digitalWrite(RELAY_PIN, HIGH);
         }
     }
     else  {

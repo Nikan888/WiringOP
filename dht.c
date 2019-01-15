@@ -5,6 +5,9 @@
  
 #define MAX_TIMINGS 85
 #define DHT_PIN 7
+
+#define RELAY_PIN 11
+
 int data[5] = { 0, 0, 0, 0, 0 };
  
 void read_dht_data()
@@ -19,6 +22,11 @@ void read_dht_data()
     pinMode( DHT_PIN, OUTPUT );
     digitalWrite( DHT_PIN, LOW );
     delay( 18 );
+
+    //
+    pinMode(RELAY_PIN, OUTPUT);
+    digitalWrite(RELAY_PIN, LOW);
+    //
  
     /* prepare to read the pin */
     pinMode( DHT_PIN, INPUT );
@@ -76,6 +84,14 @@ void read_dht_data()
         }
         float f = c * 1.8f + 32;
         printf( "Humidity = %.1f %% Temperature = %.1f *C (%.1f *F)\n", h, c, f );
+        if (h > 60)
+        {
+            digitalWrite(RELAY_PIN, HIGH);
+        }
+        else
+        {
+            digitalWrite(RELAY_PIN, LOW);
+        }
     }
     else  {
        printf( "Data not good, skip\n" );

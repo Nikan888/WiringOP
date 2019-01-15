@@ -4,9 +4,9 @@
 #include <stdint.h>
  
 #define MAX_TIMINGS 85
-#define DHT_PIN 12
+#define DHT_PIN 7
 
-#define RELAY_PIN 7
+#define RELAY_PIN 25
 
 int data[5] = { 0, 0, 0, 0, 0 };
  
